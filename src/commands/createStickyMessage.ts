@@ -17,7 +17,6 @@ export default new Command(
         
     run: async ({ interaction }) => 
     {
-        console.log('Create Sticky')
         let messageId = interaction?.options?.data[0].value as string;
         let channelId = interaction.channelId;
         new StickyMessage().AddMessage(channelId,messageId);

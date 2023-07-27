@@ -1,13 +1,11 @@
 import { Event } from "../client/Event";
 import { StickyMessage } from "../logic/stickyMessage";
-
-const config  = require('../../config.json');
+import { client } from "..";
 
 export default new Event("messageCreate", async (message) => 
 {
-    if(!message.member?.user.bot)
+    if(!message.member?.user.bot && client.user?.id)
     {   
-        console.log('No Bot')
         await new StickyMessage().CheckMessage(message);
     }
 });

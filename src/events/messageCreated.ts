@@ -4,7 +4,7 @@ import { client } from "..";
 
 export default new Event("messageCreate", async (message) => 
 {
-    if(!message.member?.user.bot && client.user?.id)
+    if(!message.member?.user.bot)
     {   
         await new StickyMessage().CheckMessage(message);
     }

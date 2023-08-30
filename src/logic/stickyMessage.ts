@@ -12,7 +12,11 @@ export class StickyMessage
     async CheckMessage(interaction: Message)
     {
       client.db?.get( "select messageid from sticky where channelid = " + `'${interaction.channelId}'`, [],
-      async (err: any,result: any) => { await this.Message(result.messageid,interaction); });
+      async (err: any,result: any) => 
+      {
+        if(result) 
+          await this.Message(result.messageid,interaction); 
+      });
     }
     
     private async Message(id:string, interaction:Message)

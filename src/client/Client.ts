@@ -77,8 +77,6 @@ export class ExtendedClient extends Client
         });
 
         this.on("ready", () => {
-            this.user?.setActivity({name: 'an welcher Nachricht man kleben kann', type: ActivityType.Watching, url: 'https://github.com/Benexdrake/DiscordTS'})
-
             for(const guild of this.guilds.cache)
             {   
                 this.registerCommands({

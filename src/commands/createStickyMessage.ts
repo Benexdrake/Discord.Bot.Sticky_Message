@@ -1,6 +1,7 @@
 import { ApplicationCommandOptionType, PermissionFlagsBits } from "discord.js";
 import { Command } from "../client/Command";
 import { StickyMessage } from "../logic/stickyMessage";
+import config from '../../config.json';
 
 export default new Command(
 {

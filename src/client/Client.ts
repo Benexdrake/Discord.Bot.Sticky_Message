@@ -34,7 +34,7 @@ export class ExtendedClient extends Client
 
         this.db = new Database('db.sqlite');
         this.db.get(
-            'create table if not exists sticky ( channelid varchar(128) primary key, messageid varchar(128))');
+            'create table if not exists sticky ( Tochannelid varchar(128) primary key, messageid varchar(128), Fromchannelid varchar(128))');
     }
 
     start(dir:string) 
